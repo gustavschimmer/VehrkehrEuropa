@@ -2,6 +2,7 @@ import os
 import osmnx as ox
 import geopandas as gpd
 import pandas as pd
+import automatischenPushen
 
 def create_master_boundary_geojson(master_boundary_geojson_filepath):
     # Create an empty GeoDataFrame for the master file
@@ -62,6 +63,8 @@ def append_to_master_boundary_geojson(requested_city_boundary_gdf, master_bounda
         js_file.write(master_boundary_gdf.to_json())
 
     print("GeoJSON and JS files created successfully.")
+    automatischenPushen.git_push()
+
 
 def download_requested_city(place_name, master_boundary_geojson_filepath):
     # Initialize master_boundary_gdf as None
