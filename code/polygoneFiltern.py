@@ -32,7 +32,8 @@ def polygoneFiltern():
     # Speichern der GeoJSON-Datei als .js-Datei
     output_js = '../layers/masterBoundary_1.js'
     with open(output_js, 'w', encoding='utf-8') as f:
-        f.write(f"const masterBoundaryData = {json.dumps(data)};")
+        f.write(f"var json_masterBoundary_1 = {json.dumps(data)};")
+
 
 if __name__ == "__main__":
     polygoneFiltern()
